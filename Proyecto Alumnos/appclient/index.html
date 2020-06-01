@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="vendors/animate.css">
+</head>
+<body>
+    <main class="container">
+
+        <h1>Listado</h1>
+        
+        <div class="container-filter">
+            <p>Buscador</p>           
+            <select id="selectorSexo">
+                <option value="t" selected>Todos</option>
+                <option value="h">Hombre</option>
+                <option value="m">Mujer</option>
+            </select>
+            <input type="search" id="inombre" placeholder="Escribe nombre">
+        </div>
+
+        <div class="row">
+            <div class="col-40">
+                <input type="button" value="Nueva Persona" onclick="seleccionar()">
+                <ul id="alumnos">
+                    <li>Cargando datos....</li>
+             
+                </ul>
+            </div>
+            <div id="content-formulario" class="col-60 formulario" style="display:none">
+                
+                <div class="row">
+               
+                    <div class="col">
+
+                        <input type="text" id="inputId" placeholder="id" readonly>
+                        <br>
+                        <input type="text" id="inputNombre" placeholder="Escribe nombre">
+                        <small id="nombreMensaje" class=""></small>
+                        <br>
+                        <input type="text" id="inputAvatar" readonly="readonly" placeholder="url imagen">
+        
+                       
+                       
+                        <br>
+                        
+                            <input checked="checked" type="radio" name="sexo" id="sexoh" value="h">
+                            <label for="sexoh">Hombre
+                            <br>
+                            <input type="radio" name="sexo" id="sexom" value="m">
+                            <label for="sexom">Mujer
+                            <br>
+        
+                        <br>
+                       
+                        <div id="gallery">                    
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <h2>Cursos</h2>
+                        <ul id="cursosAlumno">
+                            <li>sin cursos</li>
+                        </ul>
+                    </div>
+          
+               
+                </div>
+
+                <input type="button" value="Guardar" onclick="guardar()">
+
+                <input id="btnModal" type="button" class="bg-naranja" value="Asignar Curso">
+               
+
+            </div>
+     
+
+        </div>
+
+    </main>
+ 
+    <div id="modal" class="modal">
+
+    
+        <div class="modal-content">
+            <span id="close" class="close">&times;</span>
+            <h2>Listado Cursos</h2>
+            <div class="content-filtro">              
+                <input type="search" id="filtroCurso" placeholder="Escribe nombre del curso">                
+            </div>
+            <ol id="listaCursos">
+                <li>Cargando....</li>
+            </ol>
+        </div>
+    
+    </div>
+
+    <script src="js/ajax.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
